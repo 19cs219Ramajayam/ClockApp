@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="digitalClock.css">
+    <title>simple clock app</title>
+</head>
+<body>
+    <center>
+        <div class="con">
+            <h2>simple clock app</h2><br>
+    <span id="dm"></span>
+  <div class="1">Current Date <br><p id="date"></p></div>  
+   <div class="2">Digital Clock<br><p id="clock"></p></div> 
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+</center>
+</div>
+    <script>
+         var running=null;
+function dataFunction(){
+        var data=new Date();
+        const months = ["January","February","March","April","May"
+        ,"June","July","August","September","October","November","December"];
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var h,m,s,day,month,year,session;
+        month=months[data.getMonth()];
+        day = days[data.getDay()];
+        h=data.getHours();
+        m=data.getMinutes();
+        s=data.getSeconds();
+        h=(h<10)?"0"+h:h;
+        m=(m<10)?"0"+m:m;
+        s=(s<10)?"0"+s:s;
+        if(h>12){
+            session="PM";
+        }
+        else{
+            session="AM";
+        }
+        document.getElementById("dm").innerHTML="Day : "+day+"<br><br>"+"Month : "+month+"<br><br>";
+        document.getElementById("date").innerHTML=data.getDate()+"/"+(data.getMonth()+1)+"/"+data.getFullYear();
+        document.getElementById("clock").innerHTML=+h+":"+m+":"+s+":"+data.getMilliseconds()+" "+session;
+        running=setTimeout("dataFunction();",1000);
+        
+    }
+    dataFunction();
+    function start(){
+        running=setTimeout("dataFunction();",1000);
+    }
+    function stop(){
+        clearTimeout(running);
+    }
+        </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+*{
+    margin: 0vw;
+    padding: 0vw;
+}
+body{
+    background-color: rgba(23, 200, 0, 0.3);
+    overflow-x: hidden;
+}
+.con{
+    background-color: rgba(250, 253, 250, 0.4);
+    width: fit-content;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+p{
+    font-size: 70px;
+}
+div{
+    font-size: 35px;
+}
+button{
+    padding: 5px;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    color:wheat;
+    width: 50%;
+    border-radius: 10px;
+    font-size: 20px;
+}
+h2{
+    text-transform: capitalize;
+}
+@media (max-width:470px){
+    p{
+        font-size: medium;
+        margin-top: 10px;
+    }
+    div{
+        margin-top: 10px;
+        font-size: medium;
+    }
+    button{
+        font-size: medium;
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+}
